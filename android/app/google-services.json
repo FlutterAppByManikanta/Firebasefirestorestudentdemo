@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077071696056",
+    "project_id": "employeedemoapp-48cb5",
+    "storage_bucket": "employeedemoapp-48cb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077071696056:android:abc538a71e2b4156c4644d",
+        "android_client_info": {
+          "package_name": "com.mani.employeedemoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHVpvv25t1dGBb9e0qrfliGW41bcePi88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
