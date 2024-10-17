@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:employeedemoapp/model/Student.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'UserListScreen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -31,7 +32,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Registeration Form"),
+          title: const Text("Registeration Form"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -49,7 +50,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -62,63 +63,62 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  margin: EdgeInsets.only(left: 25, right: 25),
+                  margin: const EdgeInsets.only(left: 25, right: 25),
                   child: TextField(
                     controller: mobileNumberController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         labelText: "Enter Student MobileNumber"),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  margin: EdgeInsets.only(left: 25, right: 25),
+                  margin: const EdgeInsets.only(left: 25, right: 25),
                   child: TextField(
                     controller: emailController,
                     decoration:
-                        InputDecoration(labelText: "Enter Student Email"),
+                        const InputDecoration(labelText: "Enter Student Email"),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: 20,
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Student student = Student(
-                        name: nameController.text,
-                        age: int.parse(ageController.text),
-                        mobileNumber: mobileNumberController.text,
-                        email: emailController.text);
-                    addStudentDataIntoFireStore(student);
-                    print("Student is Addedd Succesfully");
 
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(10)),
-                    margin: EdgeInsets.only(left: 25, right: 25),
-                    height: 60,
-                    child: Center(
-                        child: Text(
-                      "Register",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.white),
-                    )),
-                  ))
+              ElevatedButton(onPressed: (){
+
+                setState(() {
+    Student student = Student(
+    name: nameController.text,
+    age: int.parse(ageController.text),
+    mobileNumber: mobileNumberController.text,
+    email: emailController.text);
+    addStudentDataIntoFireStore(student);
+    print("Student is Addedd Succesfully");
+    });
+
+
+
+
+              }, child: const Center(
+                  child: Text(
+                    "Register",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white),
+                  )))
+
             ],
           ),
         ),
